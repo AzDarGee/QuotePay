@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: ashishdarji
+  password: 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: QuotePay_development
+
+test:
+  <<: *default
+  database: QuotePay_test
+
+production:
+  <<: *default
+  database: QuotePay_production
